@@ -1,11 +1,13 @@
+"use client";
+
+import { Provider } from "react-redux";
+
+import store from "@/config";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Weather App",
-};
 
 export default function RootLayout({
   children,
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-        <div className='overflow-x-hidden'>{children}</div>
+        <div className='overflow-x-hidden'>
+          <Provider store={store}>{children}</Provider>
+        </div>
       </body>
     </html>
   );

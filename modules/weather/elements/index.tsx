@@ -1,33 +1,22 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-
-import { fetchCities } from "../hooks/fetchCities";
+import { fetchCities } from "@/redux/cities/actionCreators";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Props {}
 
 const WeatherModule: React.FC<Props> = () => {
-  const [cityData, setCityData] = useState<any>([]);
-
-  const { cities } = fetchCities();
+  const cities = useSelector((state: any) => state.cities);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const loadCities = async () => {
-      const data = await cities("");
-      setCityData(data);
-    };
-
-    loadCities();
+    //@ts-expect-error Argument of type '(dispatch: any) => Promise<void>' is not assignable to parameter of type 'AnyAction'
+    dispatch(fetchCities(""));
   }, []);
 
-  console.log("city", cityData);
-
-  return (
-    <div className='min-h-screen'>
-      kdf
-      {/* <Search search={search} onChange={handleSearchChange} /> */}
-    </div>
-  );
+  console.log("cities", cities);
+  return <div className='min-h-screen'>kj</div>;
 };
 
 export default WeatherModule;
