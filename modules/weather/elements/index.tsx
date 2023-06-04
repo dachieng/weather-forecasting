@@ -1,23 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import Search from "@/components/elements/Search";
+import { fetchCities } from "../hooks/fetchCities";
 
 interface Props {}
 
 const WeatherModule: React.FC<Props> = () => {
-  const [search, setSearch] = useState<string>("");
+  const [cityData, setCityData] = useState<any>([]);
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
+  const { cities } = fetchCities();
 
-  console.log("search: ", search);
+  useEffect(() => {
+    const loadCities = async () => {
+      const data = await cities("");
+      setCityData(data);
+    };
+
+    loadCities();
+  }, []);
+
+  console.log("city", cityData);
 
   return (
     <div className='min-h-screen'>
-      <Search search={search} onChange={handleSearchChange} />
+      kdf
+      {/* <Search search={search} onChange={handleSearchChange} /> */}
     </div>
   );
 };

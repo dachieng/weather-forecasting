@@ -1,25 +1,21 @@
-import React from "react";
-import { Icon } from "@iconify/react";
-import searchIcon from "@iconify/icons-icons8/search";
+"use client";
+
+import React, { useState } from "react";
+import { AsyncPaginate } from "react-select-async-paginate";
 
 interface Props {
-  search: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  data: any;
 }
 
-const Search: React.FC<Props> = (props) => {
+const Search: React.FC<Props> = ({ data }) => {
   return (
     <div className='w-full md:max-w-[67.5rem] my-[0.5rem] md:my-[2rem] mx-auto px-[0.5rem] relative'>
-      <input
-        className='w-full py-[0.3rem] rounded px-6 outline-0'
-        {...props}
-        value={props.search}
-        onChange={props.onChange}
-      />
-      <Icon
-        className='text-lg text-gray-500 font-medium absolute bottom-[0.4rem] left-3'
-        icon={searchIcon}
-      />
+      {/* <AsyncPaginate
+        value={search}
+        placeholder='Search location'
+        debounceTimeout={600}
+      /> */}
+      This is the search component
     </div>
   );
 };
