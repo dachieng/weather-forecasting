@@ -1,20 +1,16 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 
 import type { NextPage } from "next";
-import { useRouter } from "next/navigation";
+import WeatherModule from "@/modules/weather/elements";
 
 interface Props {}
 
-const HomePage: NextPage<Props> = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.push("/weather");
-  }, []);
-
-  return <div>This is the home page</div>;
+const WeatherPage: NextPage<Props> = () => {
+  return (
+    <div className='min-h-screen'>
+      <WeatherModule />
+    </div>
+  );
 };
 
-export default HomePage;
+export default WeatherPage;

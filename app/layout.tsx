@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} bg-[#f9fafb]`}>
         <div className='overflow-x-hidden'>
           <Provider store={store}>{children}</Provider>
         </div>

@@ -207,10 +207,24 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify/icons-bytesize@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-bytesize/-/icons-bytesize-1.2.5.tgz#ab87f9655f11d3a538c560876ef4a7585d379fe8"
+  integrity sha512-ue3NJqa9cDqyNJrnaiccCiMI90mQXLf/pVEsO2mlAN/zzN91s9GIqddbVLiPmTLcE81mR5IIz5D0xUOzAE+4wg==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/icons-icons8@^1.2.3":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@iconify/icons-icons8/-/icons-icons8-1.2.3.tgz#cf29194bab05847c985bc0625a83f6134c4d20f9"
   integrity sha512-uK++NUhhChuTL82meNDGXyH5w9gdTWxXsjN590pCHWfmxLfoWwY2CPaS18zpJ0o5HboPxA7xHt+NL7uZbd5IGQ==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/icons-simple-line-icons@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-simple-line-icons/-/icons-simple-line-icons-1.2.3.tgz#26594389f70fb8fd911c34d1ff73c60caa1c72f8"
+  integrity sha512-vAn+4M0C9jUQ7i0CSIFFdpFSC4riZ/V7iqTjZnzbU1yG4KYUurODDKTUukmrXBjUdv78/M1hT8ILCyBgEOWj/A==
   dependencies:
     "@iconify/types" "*"
 

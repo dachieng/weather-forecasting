@@ -35,8 +35,6 @@ const Search: React.FC<Props> = ({ handleOnSearchChange }) => {
       );
       const data = await res.json();
 
-      console.log("data", data.data);
-
       const dataValues = data.data.map((city: any) => ({
         label: `${city.countryCode} - ${city.name}`,
         value: `${city.latitude} ${city.longitude}`,
@@ -51,13 +49,13 @@ const Search: React.FC<Props> = ({ handleOnSearchChange }) => {
   };
 
   return (
-    <div className='w-full md:max-w-[67.5rem] my-[0.5rem] md:my-[2rem] mx-auto px-[0.5rem] relative'>
+    <div className='w-full md:max-w-[67.5rem] my-[0.5rem] md:my-[2rem] mx-auto px-[0.5rem]'>
       <AsyncPaginate
         // @ts-expect-error
         loadOptions={loadOptions}
         value={search}
         onChange={handleChange}
-        debounceTimeout={600}
+        debounceTimeout={200}
       />
     </div>
   );
