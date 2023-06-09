@@ -1,17 +1,25 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Search from "@/components/elements/Search";
 import CurrentWeather from "./current-weather";
 import TodaysHighlight from "./todays-highlight";
+import { fetchWeather } from "@/redux/weather/actionCreators";
 
 interface Props {}
 
 const WeatherModule: React.FC<Props> = () => {
-  const [latitude, setLatitude] = useState<number>(0);
-  const [longitude, setLongitude] = useState<number>(0);
+  const [latitude, setLatitude] = useState<number>();
+  const [longitude, setLongitude] = useState<number>();
+
+  const weather = useSelector((state: any) => state.weather);
+  const dispatch = useDispatch();
+
+  // const fetchData = useCallback(() => {
+  //   fetchWeather(latitude, longitude);
+  // }, [latitude, longitude]);
 
   const handleOnSearchChange = (data: any) => {
     // let search = data.split(" ");
@@ -20,10 +28,16 @@ const WeatherModule: React.FC<Props> = () => {
 
     setLatitude(latitude);
     setLongitude(longitude);
+
+    //@ts-expect-error Argument of type '(dispatch: any) => Promise<void>' is not assignable to parameter of type 'AnyAction'.
+    dispatch(fetchWeather(latitude, longitude));
   };
 
-  console.log("latitude", latitude);
-  console.log("longitude", longitude);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [fetchData]);
+
+  console.log("weather", weather);
 
   return (
     <div className='min-h-screen'>

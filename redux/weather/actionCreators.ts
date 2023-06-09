@@ -4,8 +4,8 @@ import {
   FETCH_WEATHER_SUCCESS,
 } from "./actionTypes";
 
-const api_key = process.env.NEXT_PUPLIC_WEATHER_API_KEY;
-const url = process.env.NEXT_PUBLIC_WEATHER_URL;
+const url = process.env.NEXT_PUBLIC_WEATHER_URL as string;
+const api_key = "1f88adfee54ac93485473d4c1fe27cde";
 
 const fetchWeatherRequest = () => {
   return {
@@ -28,17 +28,29 @@ const fetchWeatherError = (data: any) => {
 };
 
 export const fetchWeather = (latitude: number, longitude: number) => {
-  return async () => {
-    fetchWeatherRequest();
+  return async (dispatch: any) => {
+    dispatch(fetchWeatherRequest());
     try {
       const res = await fetch(
         `${url}?lat=${latitude}&lon=${longitude}&appid=${api_key}`
       );
 
-      const data = res.json();
+      console.log("re", api_key);
+      console.log("url", url);
+      console.log(
+        "hfjh",
+        `${url}?lat=${latitude}&lon=${longitude}&appid=${api_key}`
+      );
 
-      console.log("hhh", data);
+      const data = await res.json();
+
+      console.log("response", data);
+
+      dispatch(fetchWeatherSuccess(data));
+
+      console.log("hhhss", data);
     } catch (error) {
+      dispatch(fetchWeatherError(error));
       console.log("error", error);
     }
   };
