@@ -38,6 +38,17 @@ yarn install
 
 ````
 
+### Apis utilized
+- OpenWeatherMap API
+- GeoDB Cities API
+
+
+Run the following to set environment variables for code to connect to the app and the apis variables required in the setup:
+
+```bash
+cp .env.example .env.local
+```
+
 ### Starting the app
 
 Run the command below to start the app
@@ -51,7 +62,7 @@ yarn run dev
 - The app url can be accessed via
 
 <p align="center">
-    <a href="https://github.com/Discover-Bookings/discover-bookings-frontend">
+    <a href="https://dorcas-weather-app.netlify.app/">
         weatherapp
     </a>
 </p>
