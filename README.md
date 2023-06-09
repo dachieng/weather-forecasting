@@ -28,7 +28,7 @@ This project requires `nvm` installed, and the version of NodeJS used in this pr
 nvm use
 ```
 
-### Running the app
+## Running the app
 
 To install all the dependencies through yarn run:
 
@@ -38,7 +38,7 @@ yarn install
 
 ````
 
-### Apis utilized
+## Apis utilized
 - OpenWeatherMap API
 - GeoDB Cities API
 
@@ -49,7 +49,7 @@ Run the following to set environment variables for code to connect to the app an
 cp .env.example .env.local
 ```
 
-### Starting the app
+## Starting the app
 
 Run the command below to start the app
 
@@ -67,6 +67,6 @@ yarn run dev
     </a>
 </p>
 
-### App use
+## App use
 
 - Searchh for any city to view its weather results
