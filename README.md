@@ -19,6 +19,7 @@ Everything for the web project lives here. As we are using NextJS 13 - the paths
 - TypeScript
 - Redux
 - NodeJS (16.15.1)
+- Tailwind CSS
 
 ## Setting up the development enviroment
 
