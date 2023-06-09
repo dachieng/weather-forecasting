@@ -221,6 +221,13 @@
   dependencies:
     "@iconify/types" "*"
 
+"@iconify/icons-formkit@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-formkit/-/icons-formkit-1.2.0.tgz#280e0c90f2b3b079a50ecd344e14bfec5cbe64f8"
+  integrity sha512-lOgnTYhQtpAKM+3bqbWCkNdlpOHa/23QLy1n0a3lOGh2kS2OBqtPl5rvZOPv+QAUbKAWyS++FvVN09Us4wmONg==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/icons-game-icons@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@iconify/icons-game-icons/-/icons-game-icons-1.2.1.tgz#50487b01b605f37e7ab470bae8153729539a4520"

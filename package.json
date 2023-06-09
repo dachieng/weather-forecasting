@@ -33,6 +33,7 @@
   "devDependencies": {
     "@iconify/icons-bytesize": "^1.2.5",
     "@iconify/icons-circum": "^1.2.4",
+    "@iconify/icons-formkit": "^1.2.0",
     "@iconify/icons-game-icons": "^1.2.1",
     "@iconify/icons-ic": "^1.2.13",
     "@iconify/icons-icons8": "^1.2.3",

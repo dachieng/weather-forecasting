@@ -45,7 +45,7 @@ const TodaysHighlight: React.FC<Props> = ({ data }) => {
   return (
     <div className='p-3'>
       <h1 className='text-white text-medium mb-1'>Today{"'"} Highlight</h1>
-      <div className='grid grid-cols-3 gap-2'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 gap-2'>
         <div className='shadow rounded-lg bg-gradient-to-br from-sky-400 via-sky-600 to-sky-900 mr-0 md:mr-2 p-3 mb-3 min-h-[10rem]'>
           <h1 className='text-white text-base mb-1 font-semibold'>Wind</h1>
           <div className=''>
@@ -100,7 +100,7 @@ const TodaysHighlight: React.FC<Props> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className='grid grid-cols-3 gap-2'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 gap-2'>
         <div className='shadow rounded-lg bg-gradient-to-br from-sky-400 via-sky-600 to-sky-900 mr-0 md:mr-2 p-3 mb-3 min-h-[4rem]'>
           <h1 className='text-white text-base mb-1 font-semibold'>Humidity</h1>
 

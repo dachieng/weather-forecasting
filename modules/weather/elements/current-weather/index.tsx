@@ -52,9 +52,9 @@ const CurrentWeather: React.FC<Props> = ({ data }) => {
         </p>
       </div>
       <div className=''>
-        <div className='flex items-center pt-6'>
+        <div className='flex items-center pt-4'>
           <Icon icon={locationIcon} className='text-[#fff] text-2xl' />
-          <p className='text-slate-200 text-sm font-medium mx-1 mt-5'>
+          <p className='text-slate-200 text-sm font-medium mx-1 mb-1'>
             {data.name}, {data.sys.country}
           </p>
         </div>
