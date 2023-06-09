@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  weather: [],
+  weather: {},
   error: "",
 };
 
@@ -26,7 +26,7 @@ export const reducer = (state = initialState, action: any) => {
     case FETCH_WEATHER_ERROR:
       return {
         loading: false,
-        weather: [],
+        weather: {},
         error: action.payload,
       };
     default:

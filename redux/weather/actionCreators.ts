@@ -31,24 +31,19 @@ export const fetchWeather = (latitude: number, longitude: number) => {
   return async (dispatch: any) => {
     dispatch(fetchWeatherRequest());
     try {
-      const res = await fetch(
-        `${url}?lat=${latitude}&lon=${longitude}&appid=${api_key}`
+      const weather_res = await fetch(
+        `${url}/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}`
+      );
+      const forecast_res = await fetch(
+        `${url}/forecast?lat=${latitude}&lon=${longitude}&appid=${api_key}`
       );
 
-      console.log("re", api_key);
-      console.log("url", url);
-      console.log(
-        "hfjh",
-        `${url}?lat=${latitude}&lon=${longitude}&appid=${api_key}`
-      );
+      const weather = await weather_res.json();
+      const forecast = await forecast_res.json();
 
-      const data = await res.json();
-
-      console.log("response", data);
+      const data = { weather, forecast };
 
       dispatch(fetchWeatherSuccess(data));
-
-      console.log("hhhss", data);
     } catch (error) {
       dispatch(fetchWeatherError(error));
       console.log("error", error);

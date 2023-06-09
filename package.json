@@ -15,6 +15,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "moment": "^2.29.4",
     "next": "13.4.4",
     "postcss": "8.4.24",
     "react": "18.2.0",
@@ -31,7 +32,12 @@
   },
   "devDependencies": {
     "@iconify/icons-bytesize": "^1.2.5",
+    "@iconify/icons-circum": "^1.2.4",
+    "@iconify/icons-game-icons": "^1.2.1",
+    "@iconify/icons-ic": "^1.2.13",
     "@iconify/icons-icons8": "^1.2.3",
+    "@iconify/icons-material-symbols": "^1.2.45",
+    "@iconify/icons-ph": "^1.2.4",
     "@iconify/icons-simple-line-icons": "^1.2.3",
     "@iconify/react": "^4.1.0",
     "@types/redux-logger": "^3.0.9"

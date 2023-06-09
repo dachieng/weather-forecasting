@@ -27,7 +27,7 @@ const Search: React.FC<Props> = ({ handleOnSearchChange }) => {
     handleOnSearchChange(opt);
   };
 
-  const loadOptions = async (inputValue: string) => {
+  const loadOptions = async (inputValue: string | "Nairobi") => {
     try {
       const res = await fetch(
         `${url}/cities?namePrefix=${inputValue}`,

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { Suspense, useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Search from "@/components/elements/Search";
@@ -11,48 +11,40 @@ import { fetchWeather } from "@/redux/weather/actionCreators";
 interface Props {}
 
 const WeatherModule: React.FC<Props> = () => {
-  const [latitude, setLatitude] = useState<number>();
-  const [longitude, setLongitude] = useState<number>();
-
-  const weather = useSelector((state: any) => state.weather);
+  const weatherData = useSelector((state: any) => state.weather);
   const dispatch = useDispatch();
 
-  // const fetchData = useCallback(() => {
-  //   fetchWeather(latitude, longitude);
-  // }, [latitude, longitude]);
+  const { weather } = weatherData.weather;
 
   const handleOnSearchChange = (data: any) => {
-    // let search = data.split(" ");
-
     const [latitude, longitude] = data.value.split(" ");
-
-    setLatitude(latitude);
-    setLongitude(longitude);
 
     //@ts-expect-error Argument of type '(dispatch: any) => Promise<void>' is not assignable to parameter of type 'AnyAction'.
     dispatch(fetchWeather(latitude, longitude));
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [fetchData]);
-
   console.log("weather", weather);
 
   return (
-    <div className='min-h-screen'>
-      <Search handleOnSearchChange={handleOnSearchChange} />
-      <div className='w-full md:max-w-[67.5rem] my-[0.5rem] md:my-[2rem] mx-auto px-[0.5rem]'>
-        <div className='flex flex-col md:flex-row'>
-          <div className='w-full md:max-w-[20rem] rounded-2xl shadow bg-gradient-to-br from-cyan-400 via-cyan-600 to-cyan-900 mr-0 md:mr-2 p-3 mb-3 min-h-[20rem]'>
-            <CurrentWeather />
+    <Suspense fallback={<>loading</>}>
+      <div className='min-h-screen'>
+        <Search handleOnSearchChange={handleOnSearchChange} />
+        {weather ? (
+          <div className='w-full md:max-w-[67.5rem] my-[0.5rem] md:my-[2rem] mx-auto px-[0.5rem]'>
+            <div className='flex flex-col md:flex-row'>
+              <div className='w-full md:max-w-[20rem] rounded-2xl shadow bg-gradient-to-br from-cyan-400 via-cyan-600 to-cyan-900 mr-0 md:mr-2 p-3 mb-3 min-h-[20rem]'>
+                <CurrentWeather data={weather} />
+              </div>
+              <div className='flex-1 shadow rounded-2xl bg-cyan-900 p-3 mb-3'>
+                <TodaysHighlight data={weather} />
+              </div>
+            </div>
           </div>
-          <div className='flex-1 shadow rounded-2xl bg-cyan-900 p-3 mb-3'>
-            <TodaysHighlight />
-          </div>
-        </div>
+        ) : (
+          <>Welcome to the new weather app</>
+        )}
       </div>
-    </div>
+    </Suspense>
   );
 };
 
