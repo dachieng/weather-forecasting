@@ -10,7 +10,7 @@
 
 # Weather Forecasting App
 
-Everything for the web project lives here. As we are using NextJS 13 - the paths of the file correlates to the url of the particular page (eg. `src/app/abc` correlates to `http://localhost:3001/abc`).
+Everything for the web project lives here. As we are using NextJS 13 - the paths of the file correlates to the url of the particular page (eg. `app/abc` correlates to `http://localhost:3001/abc`).
 
 ## Technologies
 
@@ -59,7 +59,7 @@ yarn run dev
 
 - The app url can be accessed via
 
-<p align="center">
+<p>
     <a href="https://dorcas-weather-app.netlify.app/">
         weatherapp
     </a>
@@ -67,4 +67,4 @@ yarn run dev
 
 ## App use
 
-- Searchh for any city to view its weather results
+- Search for any city to view its weather results
