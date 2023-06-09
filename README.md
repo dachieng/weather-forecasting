@@ -36,12 +36,10 @@ To install all the dependencies through yarn run:
 yarn install
 ```
 
-````
-
 ## Apis utilized
+
 - OpenWeatherMap API
 - GeoDB Cities API
-
 
 Run the following to set environment variables for code to connect to the app and the apis variables required in the setup:
 
@@ -55,7 +53,7 @@ Run the command below to start the app
 
 ```bash
 yarn run dev
-````
+```
 
 - The app should start at **http://localhost:3000**
 
