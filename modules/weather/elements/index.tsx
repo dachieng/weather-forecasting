@@ -8,6 +8,7 @@ import CurrentWeather from "./current-weather";
 import TodaysHighlight from "./todays-highlight";
 import { fetchWeather } from "@/redux/weather/actionCreators";
 import WeatherForecast from "./forecast";
+import Home from "@/components/elements/Home";
 
 interface Props {}
 
@@ -27,7 +28,7 @@ const WeatherModule: React.FC<Props> = () => {
   console.log("weather", weather);
 
   return (
-    <Suspense fallback={<>loading</>}>
+    <Suspense fallback={<Home />}>
       <div className='min-h-screen'>
         <Search handleOnSearchChange={handleOnSearchChange} />
         {weather && forecast ? (
@@ -45,7 +46,7 @@ const WeatherModule: React.FC<Props> = () => {
             </div>
           </div>
         ) : (
-          <>Welcome to the new weather app</>
+          <Home />
         )}
       </div>
     </Suspense>
