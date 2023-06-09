@@ -11,14 +11,23 @@ import TodaysHighlight from "./todays-highlight";
 interface Props {}
 
 const WeatherModule: React.FC<Props> = () => {
-  const [search, setSearch] = useState("");
+  const [latitude, setLatitude] = useState<number>(0);
+  const [longitude, setLongitude] = useState<number>(0);
 
   const cities = useSelector((state: any) => state.cities);
   const dispatch = useDispatch();
 
   const handleOnSearchChange = (data: any) => {
-    console.log("datas", data);
+    // let search = data.split(" ");
+
+    const [latitude, longitude] = data.value.split(" ");
+
+    setLatitude(latitude);
+    setLongitude(longitude);
   };
+
+  console.log("latitude", latitude);
+  console.log("longitude", longitude);
 
   useEffect(() => {
     //@ts-expect-error Argument of type '(dispatch: any) => Promise<void>' is not assignable to parameter of type 'AnyAction'
