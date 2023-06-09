@@ -47,6 +47,15 @@ Run the following to set environment variables for code to connect to the app an
 cp .env.example .env.local
 ```
 
+To run the app locally, get the api and key values from the respective apis the actual VALUE to use in place of the below variables after setting up the account.
+
+```bash
+NEXT_PUBLIC_CITIES_API_URL=xxxxxx
+NEXT_PUBLIC_XRAPID_API_KEY=xxxxxx
+NEXT_PUBLIC_XRAPID_API_HOST=xxxxxx
+NEXT_PUBLIC_WEATHER_URL=xxxxxx
+```
+
 ## Starting the app
 
 Run the command below to start the app
