@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+   Weather Forecasting App
+</p>
 
-## Getting Started
+<p align="center">
+    <a href="https://github.com/dachieng/weather-forecasting">
+        weatherapp
+    </a>
+</p>
 
-First, run the development server:
+# Weather Forecasting App
+
+Everything for the web project lives here. As we are using NextJS 13 - the paths of the file correlates to the url of the particular page (eg. `src/app/abc` correlates to `http://localhost:3001/abc`).
+
+## Technologies
+
+- NextJS (13)
+- ReactJS (18)
+- TypeScript
+- Redux
+- NodeJS (16.15.1)
+
+## Setting up the development enviroment
+
+This project requires `nvm` installed, and the version of NodeJS used in this project is specified in `.nvmrc` file. To use the right NodeJS version, run the following at the root of this project before starting development:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+nvm use
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To install all the dependencies through yarn run:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+yarn install
+```
 
-## Learn More
+````
 
-To learn more about Next.js, take a look at the following resources:
+### Starting the app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the command below to start the app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+yarn run dev
+````
 
-## Deploy on Vercel
+- The app should start at **http://localhost:3000**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- The app url can be accessed via
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="center">
+    <a href="https://github.com/Discover-Bookings/discover-bookings-frontend">
+        weatherapp
+    </a>
+</p>
+
+### App use
+
+- Searchh for any city to view its weather results
